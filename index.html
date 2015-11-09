@@ -5,6 +5,7 @@
     <title>Learn to Love the JavaScript Ternary Operator</title>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
     <!-- Add support for earlier versions of Internet Explorer -->
     <!--[if lt IE 9]>
       <script src="lib/js/html5shiv.js"></script>
@@ -19,19 +20,105 @@
 
         <section>
           <h1>Learn to Love the JavaScript Ternary Operator</h1>
-          <p>Emily Aviva Kapor-Mater</p>
+          <p class="name">Emily Aviva Kapor-Mater</p>
+          <p class="linkto"><a href="mailto:emily@emilyaviva.com">emily@emilyaviva.com</a></p>
+          <p class="linkto"><a href="//twitter.com/EmilyAviva">Twitter</a></p>
+          <p class="linkto"><a href="//github.com/emilyaviva">GitHub</a></p>
         </section>
 
         <section>
-          <h3>Blah blah blah</h3>
+          <pre><code>
+if (todayIsAGoodDayToDie === true) {
+  die();
+} else {
+  retreat();
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code>
+if (todayIsAGoodDayToDie) die();
+else retreat();
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code>
+todayIsAGoodDayToDie ? die() : retreat();
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code>
+return 'You will turn ' + num + ' year ' + (num === 1 ? '' : 's') + ' old on ' nextBday + '.';
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code>
+var port = testingMode ? process.env.TEST_PORT : process.env.PORT;
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code>
+player.species = eccentricUncle.wealth > 1000000 ? (
+  inherit(eccentricUncle.wealth / 2),
+  spendOneNight(eccentricUncle.castle),
+  forebode(),
+  'werewolf'
+) : (
+  mourn(eccentricUncle),
+  'human'
+);
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Conditional control flow <em>as an expression</em></h3>
+        </section>
+
+        <section>
+          <pre><code>
+n % 5 ? n % 3 ? n : 'Fizz' : n % 3 ? 'Buzz' : 'FizzBuzz'
+          </code></pre>
+        </section>
+
+        <section>
+          <p><code>love(you, operators.ternary) ? hire(me) : suggest(me, improvements);</code></p>
+          <p class="linkto"><a href="mailto:emily@emilyaviva.com">emily@emilyaviva.com</a></p>
+          <p class="linkto"><a href="//twitter.com/EmilyAviva">Twitter</a></p>
+          <p class="linkto"><a href="//github.com/emilyaviva">GitHub</a></p>
         </section>
 
       </div>
     </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="lib/js/classList.js"></script>
     <script src="js/reveal.js"></script>
     <script>
-      Reveal.initialize({
-      });
-    </script>
+            // Required, even if empty.
+            Reveal.initialize({
+                dependencies: [
+            // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Interpret Markdown in <section> elements
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+            // Syntax highlight for <code> elements
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+            // Zoom in and out with Alt+click
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+            // Speaker notes
+            { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+            ]
+            });
+        </script>
   </body>
 </html>
